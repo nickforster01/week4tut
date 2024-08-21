@@ -11,6 +11,10 @@ const users = [
     { username: 'user3', birthdate: '2000-12-12', age: 23, email: 'user3@example.com', password: 'password3', valid: false }
 ];
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the server!');
+});
+
 app.post('/api/auth', (req, res) => {
     const { username, password } = req.body;
     const user = users.find(u => u.username === username && u.password === password);
