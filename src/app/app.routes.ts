@@ -1,9 +1,17 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { AccountComponent } from './account/account.component';
 
-export const routes: Routes = [
+const routes: Routes = [
+  { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'account', component: AccountComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }  // Default route
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

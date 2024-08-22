@@ -1,0 +1,13 @@
+<form (ngSubmit)="saveChanges()">
+    <label>Username:
+      <input [(ngModel)]="user.username" name="username" required />
+    </label>
+    <label>Birthdate:
+      <input [(ngModel)]="user.birthdate" name="birthdate" required />
+    </label>
+    <label>Age:
+      <input [(ngModel)]="user.age" name="age" required />
+    </label>
+    <button type="submit">Save Changes</button>
+  </form>
+  
